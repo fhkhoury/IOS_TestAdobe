@@ -34,7 +34,10 @@ written permission of Adobe.
 	 * call to trackState:data: for view states report
 	 * trackState:data: increments the page view
 	 */
-	[ADBMobile trackState:@"Menu View" data:nil];
+		
+	//NSMutableDictionary contextData = [NSMutableDictionary dictionary];
+	//[contextData setObject:@"value" forKey:@"variable"];
+	[ADBMobile trackState:@"Menu View" data:nil]; //or [ADBMobile trackState:@"Menu View" data:contextData]; if data is needed
 }
 
 @end
