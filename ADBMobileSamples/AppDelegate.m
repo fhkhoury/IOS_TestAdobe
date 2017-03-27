@@ -55,7 +55,10 @@ static NSString *const ACTION_SUNGLASSES_IDENTIFIER	=   @"SUNGLASSES_IDENTIFIER"
 #endif
 	
 	[ADBMobile setDebugLogging:YES];
-    [ADBMobile collectLifecycleData];
+	// Add the following code when you need to pass informations to the tracking function
+	// NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
+	// [contextData setObject:@"Value" forKey:@"variable"];
+    [ADBMobile collectLifecycleData]; // or [ADBMobile collectLifecycleDataWithAdditionalData:contextData] if there is data to add in the hit
     [ADBMobile registerAdobeDataCallback:^(ADBMobileDataEvent event, NSDictionary * _Nullable adobeData) {
         if (event == ADBMobileDataEventDeepLink) {
             [self handleDeepLink:adobeData[@"link_deferred"]];
