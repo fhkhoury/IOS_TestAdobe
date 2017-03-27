@@ -166,6 +166,10 @@ written permission of Adobe.
 
 - (BOOL) gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
 	if (gestureRecognizer == _tapRecognizer) {
+		//To track an interaction with additional informations add these following lines
+		//NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
+        	//[contextData setObject:@"value"forKey:@"variable"];
+        	//[ADBMobile trackAction:@"actionName" data:contextData];
 		[self toggleInfo];
 	}
 	else if (gestureRecognizer == _swipeLeftRecognizer) {
